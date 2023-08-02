@@ -280,7 +280,6 @@
             }).then(() => {
               saveArticle(this.article)
             }).catch(err => {
-              debugger
               this.$message({
                 type: 'success',
                 message: '已取消保存!'

@@ -105,7 +105,6 @@
         this.commentContent += key;
       },
       showGraffiti() {
-        debugger
         if (this.$common.isEmpty(this.$store.state.user.current)) {
           this.$message({
             message: "请先登录！",

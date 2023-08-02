@@ -126,7 +126,6 @@
       },
       handleError(err, file, fileList) {
         this.qiniuParam.key = "";
-        debugger
         this.$message({
           message: "上传出错！",
           type: "warning"
@@ -135,7 +134,6 @@
       // 上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传
       beforeUpload(file) {
         if (this.$common.isEmpty(this.qiniuParam.token)) {
-          debugger
           this.$message({
             message: "上传出错！",
             type: "warning"

@@ -115,7 +115,6 @@
         }
       },
       listArticle(label) {
-        debugger
         this.labelId = label.id;
         this.pagination = {
           current: 1,

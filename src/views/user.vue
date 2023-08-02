@@ -502,7 +502,7 @@ import {
               // console.log("curuser",res.data)
               // this.$store.commit("loadCurrentUser", res.data);
               // localStorage.setItem("userToken", res.data.accessToken);
-              this.account = "";
+              // this.account = "";
               this.password = "";
               this.$router.push({path: '/'});
             }

@@ -74,6 +74,17 @@
 
 <script>
   import {listArticle} from "@/api/article";
+  // 从pb中拿到request和response
+  // import {LoginRequest,LoginResponse} from '@/proto/user_pb'
+
+  // 从grpc_web_pb中拿到client
+  // import {UserServiceClient} from '@/proto/user_grpc_web_pb'
+
+
+  // 获得client
+  // const client = new UserServiceClient('http://2fun.top:8443', null, null);
+  // const client = new UserServiceClient('http://localhost:8443', null, null);
+
 
   const loader = () => import( "./common/loader");
   const zombie = () => import( "./common/zombie");
@@ -117,9 +128,25 @@
     watch: {},
 
     created() {
-      //console.log(111,this.$constant.random_image+new Date()+Math.floor(Math.random()*10))
       this.getGuShi();
       this.getArticles();
+      // 构建request
+    //   let request = new LoginRequest();
+    //   request.setUsername('admin');
+    //   request.setPassword('123456')
+    //
+    //
+    //   // 利用request发起请求，得到response响应
+    //   // 其中response包含在一个回调函数当中
+    //   client.login(request, {
+    //     'X-Grpc-node': 'hello world' // 自定义头部字段 可做nginx转发
+    //   }, (err,response) => {
+    //     if (err) {  //获得response失败
+    //       console.log('response err ',err)
+    //     } else { // 获得response成功
+    //       console.log('receive from server: ',response)
+    //     }
+    //   })
     },
 
     mounted() {

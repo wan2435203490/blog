@@ -14,7 +14,6 @@ router.beforeEach(async(to, from, next) => {
   NProgress.start()
   document.title = getPageTitle(to.meta.title)
   const hasToken = getToken()
-  debugger
   if (hasToken) {
     if (to.path === '/user') {
       // if is logged in, redirect to the home page

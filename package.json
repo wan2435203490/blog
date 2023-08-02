@@ -12,6 +12,8 @@
     "core-js": "^3.6.5",
     "crypto-js": "^4.1.1",
     "element-ui": "^2.4.5",
+    "google-protobuf": "^3.21.2",
+    "grpc-web": "^1.4.2",
     "js-cookie": "^3.0.5",
     "markdown-it": "^12.2.0",
     "mavon-editor": "^2.9.1",

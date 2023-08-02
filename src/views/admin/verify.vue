@@ -69,9 +69,9 @@
             // console.log(res.data)
               // localStorage.setItem("adminToken", res.data.accessToken);
               // this.$store.commit("loadCurrentAdmin", res.data);
-              this.username = "";
+              // this.username = "";
               this.password = "";
-              console.log(this.redirect)
+              //console.log(this.redirect)
               this.$router.push({path: this.redirect});
           })
           .catch((error) => {
