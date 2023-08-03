@@ -80,7 +80,7 @@ import {listTreeHole, saveTreeHole} from "@/api/web_info";
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
@@ -116,7 +116,7 @@ import {listTreeHole, saveTreeHole} from "@/api/web_info";
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });

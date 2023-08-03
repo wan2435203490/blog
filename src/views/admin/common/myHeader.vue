@@ -64,7 +64,7 @@
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });

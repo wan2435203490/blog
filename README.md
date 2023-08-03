@@ -1,6 +1,11 @@
 # wan blog
 # [个人博客](https://2fun.top)
 
+## 本地测试
+```shell
+npm run serve
+```
+
 ## 打包
 ```shell
 npm run build

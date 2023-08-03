@@ -122,7 +122,7 @@ import {deleteWeiYan, listWeiYan, saveWeiYan} from "@/api/wei_yan";
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
@@ -154,7 +154,7 @@ import {deleteWeiYan, listWeiYan, saveWeiYan} from "@/api/wei_yan";
             })
             .catch((error) => {
               this.$message({
-                message: error.message,
+                message: error,
                 type: "error"
               });
             });
@@ -185,7 +185,7 @@ import {deleteWeiYan, listWeiYan, saveWeiYan} from "@/api/wei_yan";
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });

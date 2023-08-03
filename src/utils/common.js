@@ -181,7 +181,7 @@ export default {
     saveResource(resource)
       .catch((error) => {
         that.$message({
-          message: error.message,
+          message: error,
           type: "error"
         });
       });

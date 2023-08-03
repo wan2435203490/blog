@@ -59,28 +59,38 @@
         let user = {
           username: this.username.trim(),
           password: this.$common.encrypt(this.password.trim()),
-          captcha: "nil",
-          uuid: "nil",
+          captcha: "captcha",
+          uuid: "uuid",
           isAdmin: true
         };
 
-        login(user)
-          .then((res) => {
-            // console.log(res.data)
-              // localStorage.setItem("adminToken", res.data.accessToken);
-              // this.$store.commit("loadCurrentAdmin", res.data);
-              // this.username = "";
-              this.password = "";
-              //console.log(this.redirect)
-              this.$router.push({path: this.redirect});
+        this.$store.dispatch('user/login', user)
+          .then(() => {
+            this.password = this.$common.decrypt(this.password.trim())
+            this.$router.push({path: this.redirect});
           })
-          .catch((error) => {
-            console.log(error.message)
-            this.$message({
-              message: error.message,
-              type: "error"
-            });
-          });
+          .catch(() => {
+            this.loginLoading = false
+            this.password = this.$common.decrypt(this.password.trim())
+            //this.getCaptchaImg()
+          })
+
+        // login(user)
+        //   .then((res) => {
+        //     // console.log(res.data)
+        //       // localStorage.setItem("adminToken", res.data.accessToken);
+        //       // this.$store.commit("loadCurrentAdmin", res.data);
+        //       // this.username = "";
+        //       this.password = "";
+        //       //console.log(this.redirect)
+        //       this.$router.push({path: this.redirect});
+        //   })
+        //   .catch((error) => {
+        //     this.$message({
+        //       message: error,
+        //       type: "error"
+        //     });
+        //   });
       }
     }
   }

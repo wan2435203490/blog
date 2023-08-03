@@ -509,7 +509,7 @@ import {
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
@@ -547,7 +547,7 @@ import {
             })
             .catch((error) => {
               this.$message({
-                message: error.message,
+                message: error,
                 type: "error"
               });
             });
@@ -579,7 +579,7 @@ import {
             });
             return false;
           }
-          params.place = this.email;
+          params.place = this.registerForm.email;
           return true;
         }
         return false;
@@ -644,7 +644,7 @@ import {
               })
               .catch((error) => {
                 this.$message({
-                  message: error.message,
+                  message: error,
                   type: "error"
                 });
               });
@@ -698,7 +698,7 @@ import {
             })
             .catch((error) => {
               this.$message({
-                message: error.message,
+                message: error,
                 type: "error"
               });
             });
@@ -717,7 +717,7 @@ import {
             })
             .catch((error) => {
               this.$message({
-                message: error.message,
+                message: error,
                 type: "error"
               });
             });
@@ -742,7 +742,7 @@ import {
             })
             .catch((error) => {
               this.$message({
-                message: error.message,
+                message: error,
                 type: "error"
               });
             });
@@ -763,6 +763,12 @@ import {
         }
       },
       clearDialog() {
+        this.registerForm.email = ""
+        this.registerForm.phoneNumber = ""
+        this.registerForm.password = ""
+        this.loginForm.password = ""
+        this.loginForm.captcha = ""
+        this.loginForm.uuid = ""
         this.password = "";
         this.phoneNumber = "";
         this.email = "";

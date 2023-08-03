@@ -41,6 +41,7 @@ service.interceptors.response.use(
   const code = response.data.code
 
   if (code === 401) {
+    debugger
     //remove cookies token and set store.state.token=''
     store.dispatch('user/resetToken')
     if (location.href.indexOf('login') !== -1) {
@@ -59,6 +60,7 @@ service.interceptors.response.use(
       })
     }
   } else if (code === 6401) {
+    debugger
     store.dispatch('user/resetToken')
     MessageBox.confirm(
       '登录状态已过期，您可以继续留在该页面，或者重新登录',
@@ -78,7 +80,7 @@ service.interceptors.response.use(
       message: response.data.message,
       type: 'error'
     })
-    return Promise.reject('error')
+    return Promise.reject(response.data.message)
   } else {
     return response.data
   }
@@ -105,7 +107,7 @@ service.interceptors.response.use(
   })
 
   //只有reject才会进catch分支 没有这一句会走then then报错的话会进catch
-  return Promise.reject(error)
+  return Promise.reject(error.response.data.message)
 });
 
 // 当data为URLSearchParams对象时设置为application/x-www-form-urlencoded;charset=utf-8

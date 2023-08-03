@@ -214,7 +214,7 @@ import {saveSort, saveLabel, getSortInfo, deleteLabel, deleteSort} from '@/api/w
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
@@ -241,7 +241,7 @@ import {saveSort, saveLabel, getSortInfo, deleteLabel, deleteSort} from '@/api/w
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
@@ -294,7 +294,7 @@ import {saveSort, saveLabel, getSortInfo, deleteLabel, deleteSort} from '@/api/w
           })
           .catch((error) => {
             this.$message({
-              message: error.message,
+              message: error,
               type: "error"
             });
           });
