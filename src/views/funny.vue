@@ -59,7 +59,7 @@
                   <div style="width: 200px; " v-for="(song, i) in item.songs" :key="i">
                     <el-avatar class="funny-avatar myCenter" :size="120"
                                style="margin-left: 40px;margin-right: 40px"
-                               @click.native="playSound(song.url)"
+                               @click.native="playSound(song.url, item.typeName)"
                                :src="song.picurl">
                       <img :src="$constant.random_image_small"/>
                     </el-avatar>
@@ -122,8 +122,9 @@
           cover: "",
           url: ""
         },
-        randomMusicCount: 5,
-        songs: []
+        randomMusicCount: 20,
+        songs: [],
+        selectedType: null
       }
     },
 
@@ -197,7 +198,12 @@
       //     }
       //   });
       // },
-      playSound(src) {
+      playSound(src, type) {
+        if(type === "QQ音乐随机"){
+          this.audio.end()
+          return
+        }
+        this.selectedType = type
         if (this.audio != null) {
           if (this.audio.src === src) {
             if (this.audio.paused) {
@@ -206,16 +212,37 @@
               this.audio.pause();
             }
           } else {
-            this.audio.pause();
-            this.audio.src = src;
-            this.audio.load();
-            this.audio.play();
+            this.play(src)
           }
         } else {
           this.audio = new Audio(src);
+          this.addAudioListener()
           this.audio.play();
         }
-      }
+      },
+      addAudioListener(){
+        // 播放结束触发
+        this.audio.onended = () => {
+          console.log("ended")
+          for (let i = 0; i < this.songs.length; i++) {
+            if(this.songs[i].typeName === this.selectedType){
+              console.log("type:", this.songs[i].typeName)
+              let j = Math.floor(Math.random() * this.songs[i].songs.length)
+              console.log("j:", j)
+              console.log("url:", this.songs[i].songs[j].url)
+              this.play(this.songs[i].songs[j].url)
+              break
+            }
+          }
+        };
+      },
+      play(src){
+        this.audio.src = src;
+        this.audio.load();
+        setTimeout(() => {
+              this.audio.play();
+            }, 1000);
+      },
     }
   }
 </script>
