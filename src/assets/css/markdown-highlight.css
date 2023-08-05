@@ -33,7 +33,7 @@
 
 .entry-content code:not(.hljs) {
     background: #fefac7;
-    color: #e67474;
+    color: #15b2aa;
     word-break: break-word;
     padding: 4px 6px;
     border-radius: 5px;
@@ -94,7 +94,7 @@
 }
 
 .entry-content h2:before {
-    content: "🌺";
+    content: "💫️";
     position: absolute;
     left: 0;
     font-size: 1.03em;
@@ -106,24 +106,24 @@
     left: 0;
     position: absolute;
     margin-top: 2px;
-    color: #ff6d6d;
+    color: #63f1ec;
 }
 
 .entry-content h4:before {
     content: "▌";
     left: 0;
     position: absolute;
-    color: #ff6d6d;
+    color: #63f1ec;
 }
 
 .entry-content h5:before {
-    content: "🌷";
+    content: "🌎";
     left: 0;
     position: absolute;
 }
 
 .entry-content a {
-    color: #e67474;
+    color: #63f1ec;
     position: relative;
     text-decoration: none;
 }
@@ -160,7 +160,7 @@
 .entry-content hr {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 0.5px dashed #fc625d;
+    border: 0.5px dashed #15b2aa;
 }
 
 .entry-content img {
@@ -186,7 +186,7 @@
     content: "";
     position: absolute;
     border-radius: 50%;
-    background: #fc625d;
+    background: #15b2aa;
     width: 12px;
     height: 12px;
     left: 12px;
@@ -291,7 +291,7 @@
 .hljs-section,
 .hljs-selector-tag,
 .hljs-subst {
-    color: #e06c75;
+    color: #15b2aa;
 }
 
 .hljs-literal {

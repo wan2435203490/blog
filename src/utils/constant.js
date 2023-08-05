@@ -77,7 +77,7 @@ export default {
     "linear-gradient(120deg, rgba(91, 39, 255, 1) 0%, rgba(0, 212, 255, 1) 100%)"
   ],
 
-  pageColor: "#ee7752",
+  pageColor: "#63f1ec",
   commentPageColor: "#23d5ab",
   userId: 1,
   source: 0,

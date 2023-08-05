@@ -249,7 +249,7 @@
           });
       },
       getArticle() {
-        getArticleById({id: this.id})
+        getArticleById({articleId: this.id})
           .then((res) => {
             if (!this.$common.isEmpty(res.data)) {
               this.article = res.data;
